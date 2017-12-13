@@ -74,7 +74,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalUsingDirectories>
+      </AdditionalUsingDirectories>
+      <AdditionalIncludeDirectories>C:\Users\АлишбековА\cereal\include;%(AdditionalUsingDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>C:\Users\АлишбековА\cereal\include;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -116,7 +122,9 @@
     <ClCompile Include="exceptions.cpp" />
     <ClCompile Include="Employer.cpp" />
     <ClCompile Include="Figure.cpp" />
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="12.12.2017 1-st .cpp" />
+    <ClCompile Include="namespaces.cpp" />
+    <ClCompile Include="Casts.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
