@@ -33,14 +33,24 @@ public:
 int main() 
 {
 	vector<A> x = { A(1),A(3),A(4),A(5),A(6),A(2) };
+	for_each(x.begin(), x.end(), [](A a) {cout << a.value << '\t'; });
+	cout << " " << endl;
 	int y;
 	cin >> y;
 
 	Finder f(y);
+	
 	auto a = find_if(x.begin(), x.end(), f);
-
+	if (a != x.end())
+	{
+		cout << "this your's odd value" << "\t" << *a << '\n';
+	}
+	else
+	{
+		cout << "ERROR 404 NOT FOUND" << endl;
+	}
 	//auto a =  find_if(x.begin(), x.end(), [y](A &a) {return a.value == y; });
-	cout << "this your's odd value" << "\t"  << *a << '\n';
+	
 	system("pause");
 	return 0;
 }
