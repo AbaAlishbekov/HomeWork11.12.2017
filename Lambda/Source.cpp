@@ -30,8 +30,8 @@ public:
 		return x == a.value;
 	}
 };
-int main() 
-{
+
+void Find() {
 	vector<A> x = { A(1),A(3),A(4),A(5),A(6),A(2) };
 	for_each(x.begin(), x.end(), [](A a) {cout << a.value << '\t'; });
 	cout << " " << endl;
@@ -39,7 +39,7 @@ int main()
 	cin >> y;
 
 	Finder f(y);
-	
+
 	auto a = find_if(x.begin(), x.end(), f);
 	if (a != x.end())
 	{
@@ -50,7 +50,27 @@ int main()
 		cout << "ERROR 404 NOT FOUND" << endl;
 	}
 	//auto a =  find_if(x.begin(), x.end(), [y](A &a) {return a.value == y; });
+}
+
+int main() 
+{
+	string a;
+	string b;
 	
+
+	cin >> a;
+	cin >> b;
+	
+	if (std::is_permutation(a.begin(),a.end(),b.begin()) )
+	{
+		cout << "Nice" << endl;
+	}
+	else
+	{
+		cout << "Error" << endl;
+	}
+
+
 	system("pause");
 	return 0;
 }
