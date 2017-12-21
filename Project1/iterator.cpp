@@ -1,9 +1,81 @@
 #include "stdafx.h"
+class A {
+public:
+	A() {
+		std::cout << "A()" << std::endl;
+	}
+	~A() {
+		std::cout << "~A()" << std::endl;
+	}
+	int value;
+	friend std::ostream & operator<<(std::ostream &, const A &);
+	friend void operator >> (std::istream & stream, const A & a);
+};
+std::ostream & operator<<(std::ostream & stream, const A & a)
+{
+	return stream << a.value;
+}
+void operator >> (std::istream & stream, const A & a) {
+	stream >> a;
+}
+void write_to_file() {
+	A a;
+	a.value = 6;
+	std::ofstream fout("file.txt");
+	fout << a;
+	fout.close();
+}
+void string_features() {
+	std::string s = "abc", x = "123";
+	s += "asdasd";
+	std::swap(s, x);
+	std::reverse(s.begin(), s.end());
+	std::cout << s << '\t' << x << std::endl;
+}
+void auto_ptr() {
+	std::auto_ptr<A> a(new A());
+	a->value = 5;
+	std::auto_ptr<A> b = a;
+	std::cout << b->value << '\t' << std::endl;
+}
+void shared_ptr() {
+	std::shared_ptr<int> x(new int(5));
+	std::cout << x.use_count();
+	std::shared_ptr<int> y = x;
+	std::cout << x.use_count();
+}
+void unique_ptr() {
+	std::unique_ptr<int> x(new int(5));
+}
+void use_count(std::shared_ptr<int> & x) {
+	std::cout << x.use_count();
+}
+void uniqueness() {
+	std::string x;
+	std::getline(std::cin, x);
+	std::set<char> y;
+	for (size_t i = 0; i < x.length(); ++i)
+	{
+		if (y.find(x[i]) != y.end())
+		{
+			std::cout << "not unique" << std::endl;
+			return;
+		}
+		else
+		{
+			y.insert(x[i]);
+		}
+	}
+	std::cout << "unique" << std::endl;
+}
+bool compare(int x, int y) {
 
+	return x < y;
+}
 void vector() {
-	int arr[10] = { 1,2,3,4,5,6,7,8,9 };
+	int arr[10] = { 8,9,6,3,4,6,7,1,2 };
 	std::vector<int> x(arr, arr + 10);
-
+	std::sort(x.begin(), x.end(), [](int x, int y) {return x < y; });
 	auto it = x.begin();
 
 	for (; it != x.begin(); ++it)
@@ -34,12 +106,12 @@ void map() {
 	}
 	std::cout << std::endl;
 }
-
 int main() {
 
+
+
+	vector();
 	
 
-	
-	list();
-	return 0;
+	system("pause");
 }

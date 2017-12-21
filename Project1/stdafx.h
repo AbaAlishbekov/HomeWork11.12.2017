@@ -1,9 +1,12 @@
 #pragma once
-#include<iostream>
-#include<string>
-#include<ctime>
-#include <typeinfo>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <memory>
+#include <set>
 #include <vector>
-#include<map>
 #include <list>
-#include<algorithm>
+#include <map>
+#include <unordered_map>
+#include <algorithm>
+#include <functional>
