@@ -52,22 +52,41 @@ void Find() {
 	//auto a =  find_if(x.begin(), x.end(), [y](A &a) {return a.value == y; });
 }
 
-int main() 
-{
+void Permutation() {
 	string a;
 	string b;
-	
+
 
 	cin >> a;
 	cin >> b;
-	
-	if (std::is_permutation(a.begin(),a.end(),b.begin()) )
+
+	if (std::is_permutation(a.begin(), a.end(), b.begin()))
 	{
 		cout << "Nice" << endl;
 	}
 	else
 	{
 		cout << "Error" << endl;
+	}
+
+}
+
+int main() 
+{
+	string a;
+	cin >> a;
+	
+	bool arr[256] = { false };
+
+	for (int i = 0; i < a.length(); i++)
+	{
+		int temp = (int)(a[i] - 48);
+		if (arr[temp])
+		{
+			cout << "not unique";
+			return 0;
+		}
+		arr[temp] = true;
 	}
 
 
