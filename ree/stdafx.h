@@ -1,14 +1,7 @@
 #pragma once
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <memory>
-#include <set>
 #include <vector>
-#include <list>
-#include <map>
-#include <unordered_map>
+#include <iostream>
 #include <algorithm>
+#include <time.h>
+#include <stdlib.h>
 #include <functional>
-#include <ctime>
-
